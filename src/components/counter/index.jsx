@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import './index.css';
 
 @autobind
 export default class Counter extends React.Component {

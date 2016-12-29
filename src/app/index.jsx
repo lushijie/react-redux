@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { bindActionCreators, createStore } from 'redux';
-import Counter from './counter';
+import Counter from 'components/counter';
 import { counterActionTypes, counterActionCreators, counterReducer } from 'reducers/counter';
 
 
