@@ -2,7 +2,7 @@
  * @Author: lushijie
  * @Date:   2016-02-25 15:33:13
  * @Last Modified by:   lushijie
- * @Last Modified time: 2016-12-29 12:05:38
+ * @Last Modified time: 2016-12-29 15:16:48
  */
 
 var webpack = require('webpack');
@@ -73,7 +73,8 @@ module.exports = {
       'components': path.join(__dirname, 'src/components'),
       'constants': path.join(__dirname, 'src/constants'),
       'models': path.join(__dirname, 'src/models'),
-      'resource': path.join(__dirname, 'src/resource'),
+      'resources': path.join(__dirname, 'resources'),
+      'actions': path.join(__dirname, 'src/actions')
     }
   },
   devServer: {

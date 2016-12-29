@@ -1,29 +1,59 @@
-import React, {PropTypes} from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {actionCreators} from 'reducers/counter';
+import {bindActionCreators} from 'redux';
 import './index.css';
 
-@autobind
-export default class Counter extends React.Component {
-
-  static propTypes = {
-    // 替代原propTypes 属性,注意前面有static,属于静态方法.
-    value: PropTypes.number.isRequired,
-    onIncrement: PropTypes.func.isRequired,
-    onDecrement: PropTypes.func.isRequired
-  }
-
-  constructor(props) {
-    super(props)
-  }
-
+class Counter extends Component {
   render() {
-    const { value, onIncrement, onDecrement } = this.props
+    const {states, actions, props} = this.props;
     return (
-      <p>
-        Clicked: {value} times
-        <button onClick={onIncrement} className="btn"> + </button>
-        <button onClick={onDecrement} className="btn"> - </button>
-      </p>
+      <div>
+        <h3>state= {states.state}</h3>
+
+        <div>
+          <button className="btn" onClick={() => {
+              actions.incActionCreator(3);
+            }}
+          >+</button>
+
+          <button className="btn" onClick={() => {
+              actions.decActionCreator(2);
+            }}
+          >-</button>
+        </div>
+      </div>
     )
   }
 }
 
+const mapStateToProps = (state) => {
+  return (
+      {
+        state
+      }
+  );
+}
+
+const mapDispathToProps = (dispatch) => {
+  return (
+    {
+      ...bindActionCreators(actionCreators , dispatch)
+    }
+  );
+}
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  console.log(stateProps);
+  console.log(dispatchProps);
+  console.log(ownProps);
+  return (
+    {
+      props: ownProps,
+      states: stateProps,
+      actions: dispatchProps
+    }
+  )
+}
+
+export default connect(mapStateToProps, mapDispathToProps, mergeProps)(Counter)

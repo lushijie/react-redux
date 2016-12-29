@@ -1,31 +1,30 @@
-//actionTypes
-export const counterActionTypes = {
+const actionTypes = {
   INCREMENT: 'INCREMENT',
   DECREMENT: 'DECREMENT'
 }
 
-//actionCreators
-export const counterActionCreators = {
-  incActionCreator: function(step) {
+export const actionCreators = {
+  incActionCreator: (step) => {
     return {
-      type: counterActionTypes.INCREMENT,
+      type: actionTypes.INCREMENT,
       step
     }
   },
-  decActionCreator: function(step) {
+
+  decActionCreator: (step) => {
     return {
-      type: counterActionTypes.DECREMENT,
+      type: actionTypes.DECREMENT,
       step
     }
   }
 }
 
-//reducers
+
 export function counterReducer(state = 0, action) {
   switch (action.type) {
-    case counterActionTypes.INCREMENT:
+    case actionTypes.INCREMENT:
       return state + action.step
-    case counterActionTypes.DECREMENT:
+    case actionTypes.DECREMENT:
       return state - action.step
     default:
       return state
