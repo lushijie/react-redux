@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import {withRouter} from 'react-router';
-import {BaseComponent} from 'components/baseComponent';
-
-import './index.css';
+import React, {Component} from 'react'
+import {withRouter} from 'react-router'
+import {BaseComponent} from 'components'
+import './index.css'
 
 export default withRouter(class extends BaseComponent {
   componentDidMount() {

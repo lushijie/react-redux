@@ -2,7 +2,7 @@
  * @Author: lushijie
  * @Date:   2016-03-04 11:28:41
  * @Last Modified by:   lushijie
- * @Last Modified time: 2016-11-14 11:52:38
+ * @Last Modified time: 2016-12-29 17:56:06
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -12,6 +12,7 @@ var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
+var isDev = JSON.parse(JSON.stringify(process.env.NODE_ENV || 'development')) == 'development';
 
 module.exports = {
 
@@ -66,7 +67,7 @@ module.exports = {
   'definePluginConf': function(options) {
     options = objectAssign({
       "process.env": {
-        NODE_ENV: JSON.stringify("production")
+        NODE_ENV: JSON.stringify(isDev ? "development" : "production")
       }
     }, options);
     return (

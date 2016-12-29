@@ -9,8 +9,6 @@ class Counter extends Component {
     const {states, actions, props} = this.props;
     return (
       <div>
-        <h3>state= {states.state}</h3>
-
         <div>
           <button className="btn" onClick={() => {
               actions.incActionCreator(3);
@@ -44,9 +42,9 @@ const mapDispathToProps = (dispatch) => {
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  console.log(stateProps);
-  console.log(dispatchProps);
-  console.log(ownProps);
+  // console.log(stateProps);
+  // console.log(dispatchProps);
+  // console.log(ownProps);
   return (
     {
       props: ownProps,

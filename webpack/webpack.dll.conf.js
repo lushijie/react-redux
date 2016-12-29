@@ -2,12 +2,14 @@
  * @Author: lushijie
  * @Date:   2016-11-11 16:28:28
  * @Last Modified by:   lushijie
- * @Last Modified time: 2016-12-14 16:40:53
+ * @Last Modified time: 2016-12-29 17:56:53
  */
 
 var path = require('path');
 var webpack = require('webpack');
 var base = path.join(__dirname);
+var isDev = JSON.parse(JSON.stringify(process.env.NODE_ENV || 'development')) == 'development';
+
 
 var vendors = [
   'autobind-decorator',
@@ -39,7 +41,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify("production")
+        NODE_ENV: JSON.stringify(isDev ? "development" : "production")
       }
     }),
     new webpack.optimize.UglifyJsPlugin({

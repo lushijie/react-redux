@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {BaseComponent} from 'components/baseComponent';
-import {withRouter} from 'react-router';
-import Counter from 'components/Counter';
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
+import {withRouter} from 'react-router'
+import {BaseComponent, Counter} from 'components'
 
 
 //autobind 依赖babel-plugin-transform-decorators-legacy
@@ -32,7 +31,7 @@ export default withRouter(class extends BaseComponent {
   }
 
   componentDidMount() {
-    console.log('withRouter props:', this.props);
+    //console.log('withRouter props:', this.props);
   }
 
   componentWillUnmount() {
