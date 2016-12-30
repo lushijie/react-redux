@@ -1,1 +1,1 @@
-export {counterReducer} from './counter'
+export {counterReducer} from 'components/Counter/reducer'
