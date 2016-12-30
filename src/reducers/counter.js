@@ -39,7 +39,7 @@ const defaultState = {
   num: 0
 };
 
-export function counterReducer(state = defaultState, action) {
+export function CounterReducer(state = defaultState, action) {
   let stateClone = Clone(state);
 
   switch (action.type) {

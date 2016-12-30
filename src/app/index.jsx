@@ -2,15 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {createStore, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
-import {counterReducer} from 'reducers/counter'
+import {CounterReducer} from 'reducers'
 import {rootRoute} from './router'
 import {Router, browserHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 
-// const reducers = combineReducers({
-//   CounterReducer,
-// })
-const store = createStore(counterReducer);
+const reducers = combineReducers({
+  counterState: CounterReducer,
+})
+const store = createStore(reducers);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} routes={rootRoute} />

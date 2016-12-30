@@ -30,7 +30,7 @@ class Counter extends Component {
 const mapStateToProps = (state) => {
   return (
     {
-      ...state
+      ...state.counterState
     }
   );
 }
