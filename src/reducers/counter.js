@@ -1,3 +1,5 @@
+import Clone from 'clone';
+
 const actionTypes = {
   INCREMENT: 'INCREMENT',
   DECREMENT: 'DECREMENT'
@@ -19,14 +21,37 @@ export const actionCreators = {
   }
 }
 
+// const defaultState = 6;
 
-export function counterReducer(state = 0, action) {
+// export function counterReducer(state = defaultState, action) {
+//   switch (action.type) {
+//     case actionTypes.INCREMENT:
+//       return state + action.step
+//     case actionTypes.DECREMENT:
+//       return state - action.step
+//     default:
+//       return state
+//   }
+// }
+
+const defaultState = {
+  type: 'XXX',
+  num: 0
+};
+
+export function counterReducer(state = defaultState, action) {
+  let stateClone = Clone(state);
+
   switch (action.type) {
     case actionTypes.INCREMENT:
-      return state + action.step
+      stateClone.type = 'INC';
+      stateClone.num = stateClone.num + action.step;
+      return stateClone;
     case actionTypes.DECREMENT:
-      return state - action.step
+      stateClone.type = 'DEC';
+      stateClone.num = stateClone.num - action.step;
+      return stateClone;
     default:
-      return state
+      return stateClone;
   }
 }

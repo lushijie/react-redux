@@ -6,9 +6,11 @@ import './index.css';
 
 class Counter extends Component {
   render() {
-    const {states, actions, props} = this.props;
+    const {states, actions, props} = this.props
+    console.log('render state', states)
     return (
       <div>
+        <h3>{states && (states.type + ':' + states.num)}</h3>
         <div>
           <button className="btn" onClick={() => {
               actions.incActionCreator(3);
@@ -28,7 +30,7 @@ class Counter extends Component {
 const mapStateToProps = (state) => {
   return (
     {
-      state
+      ...state
     }
   );
 }
@@ -42,9 +44,6 @@ const mapDispathToProps = (dispatch) => {
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  // console.log(stateProps);
-  // console.log(dispatchProps);
-  // console.log(ownProps);
   return (
     {
       props: ownProps,

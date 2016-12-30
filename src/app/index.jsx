@@ -7,31 +7,32 @@ import {rootRoute} from './router'
 import {Router, browserHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 
-// const store = createStore(counterReducer, 10);
+// const reducers = combineReducers({
+//   CounterReducer,
+// })
+const store = createStore(counterReducer);
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={browserHistory} routes={rootRoute} />
+  </Provider>,
+  document.getElementById('app')
+);
+
+
+
+// const reducers = combineReducers({
+//   ...counterReducer,
+//   routing: routerReducer
+// })
+
+// const store = createStore(reducers, {initialState: 10})
+// const history = syncHistoryWithStore(browserHistory, store)
+
 // console.log(store.getState())
 
 // ReactDOM.render(
 //   <Provider store={store}>
-//     <Router history={browserHistory} routes={rootRoute} />
+//     <Router history={history} routes={rootRoute} />
 //   </Provider>,
 //   document.getElementById('app')
 // );
-
-
-
-const reducers = combineReducers({
-  ...counterReducer,
-  routing: routerReducer
-})
-
-const store = createStore(reducers, {initialState: 10})
-const history = syncHistoryWithStore(browserHistory, store)
-
-console.log(store.getState())
-
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history} routes={rootRoute} />
-  </Provider>,
-  document.getElementById('app')
-);
