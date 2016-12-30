@@ -21,19 +21,6 @@ export const actionCreators = {
   }
 }
 
-// const defaultState = 6;
-
-// export function counterReducer(state = defaultState, action) {
-//   switch (action.type) {
-//     case actionTypes.INCREMENT:
-//       return state + action.step
-//     case actionTypes.DECREMENT:
-//       return state - action.step
-//     default:
-//       return state
-//   }
-// }
-
 const defaultState = {
   type: 'XXX',
   num: 0
