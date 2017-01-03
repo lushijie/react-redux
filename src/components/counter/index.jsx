@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {actionCreators} from 'reducers/counter';
+import {actionCreators} from 'reducers';
 import {bindActionCreators} from 'redux';
 import './index.css';
 

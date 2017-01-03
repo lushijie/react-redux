@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import {withRouter} from 'react-router'
 import {BaseComponent, Counter} from 'components'
-
+import {Rodal} from 'components'
 
 //autobind 依赖babel-plugin-transform-decorators-legacy
 @autobind
@@ -38,6 +38,13 @@ export default withRouter(class extends BaseComponent {
     //todo
   }
 
+  handleShowRodal() {
+    this.setState({rodalVisible: true});
+  }
+
+  handleHideRodal() {
+    this.setState({rodalVisible: false});
+  }
 
   render() {
     return (
@@ -47,6 +54,12 @@ export default withRouter(class extends BaseComponent {
         <div>
           <Counter custom={"This is ownProps!"} />
         </div>
+        <button onClick={() => this.handleShowRodal()}>Rodal测试</button>
+        <Rodal visible={this.state.rodalVisible}
+            onClose={() => this.handleHideRodal()}
+        >
+          <div>Content</div>
+        </Rodal>
       </div>
     )
   }
