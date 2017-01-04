@@ -13,7 +13,9 @@ export default withRouter(class extends BaseComponent {
       <div>
         <h3>Inbox-Message</h3>
         <h4>This is message {this.props.params.id} page!</h4>
-        <Counter custom={"message This is ownProps!"} />
+        {/*
+          <Counter custom={"message This is ownProps!"} />
+        */}
       </div>
     )
   }

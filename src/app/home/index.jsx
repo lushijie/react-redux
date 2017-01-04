@@ -51,9 +51,11 @@ export default withRouter(class extends BaseComponent {
       <div>
         <h2>Home</h2>
         <h3>This is Home page!</h3>
+        {/*
         <div>
           <Counter custom={"This is ownProps!"} />
         </div>
+        */}
         <button onClick={() => this.handleShowRodal()}>Rodal测试</button>
         <Rodal visible={this.state.rodalVisible}
             onClose={() => this.handleHideRodal()}

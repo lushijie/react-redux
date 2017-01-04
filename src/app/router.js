@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2016-12-28 18:10:44
 * @Last Modified by:   lushijie
-* @Last Modified time: 2016-12-29 20:22:19
+* @Last Modified time: 2017-01-04 11:17:14
 */
 import Layout from 'app/layout'
 import IndexHome from 'app/home'
@@ -27,12 +27,11 @@ export let rootRoute = [
             //请参照下方Inbox的定义方式
             //一、非动态加载 component
             //二、动态加载 getComponent
-
         // },
 
         //一、非动态加载
-        //component: require('app/inbox').default,
         component: Inbox,
+        //component: require('app/inbox').default,
         //二、动态加载
         // getComponent: (nextState, cb) => {
         //   require.ensure([], () => {
